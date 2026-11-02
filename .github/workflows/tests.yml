@@ -28,4 +28,4 @@ jobs:
         run: python -m py_compile bot.py weather_app.py weather_card.py storage.py
 
       - name: Test
-        run: pytest -q
+        run: python -m pytest -q
