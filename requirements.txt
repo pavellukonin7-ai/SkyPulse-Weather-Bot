@@ -1,0 +1,5 @@
+requests
+python-dotenv
+pyTelegramBotAPI
+Pillow>=10.4,<13
+astral>=3.2,<4

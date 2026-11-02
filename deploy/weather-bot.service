@@ -1,0 +1,28 @@
+[Unit]
+Description=SkyPulse Telegram Weather Bot
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+User=weatherbot
+Group=weatherbot
+WorkingDirectory=/opt/weather-bot
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/opt/weather-bot/venv/bin/python /opt/weather-bot/bot.py
+Restart=always
+RestartSec=5
+TimeoutStopSec=20
+UMask=0077
+
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectHome=true
+ProtectSystem=strict
+ReadWritePaths=/opt/weather-bot
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+
+[Install]
+WantedBy=multi-user.target
